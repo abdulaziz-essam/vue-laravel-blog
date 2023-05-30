@@ -19,4 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Route::get('/setting', [App\Http\Controllers\SettingsController::class, 'index'])->name('home');
+// Route::get('/settings', [SettingController::class, 'index']);
+// Route::get('settings','SettingController@index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/setting', [App\Http\Controllers\SettingsController::class, 'index'])->name('setting');
+// Route::get('/settings', function () {
+//     return view('setting');
+// });

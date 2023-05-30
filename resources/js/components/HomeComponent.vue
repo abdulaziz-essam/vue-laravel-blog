@@ -1,34 +1,51 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">Example Component</div>
 
-                    <div class="card-body">
-          this home component
-                    </div>
-                </div>
+            <div class="card-body">
+              This home component
+              <h1>{{ name }}</h1>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</template>
+  </template>
 
-<script>
-    export default {
-        data(){
+  <script>
+    import axios from "axios"
+  export default {
 
-        },
-        mounted() {
-            console.log('Component mounted.')
-        },
-        methods:{
-            getPosts(){
-               axios.get('api/setting')
-               .then(res=>{
-                console.log(res)
-               })
-            }
-        }
-    }
-</script>
+    data() {
+      return {
+        name: "yasser"
+      };
+    },
+    mounted() {
+
+
+        console.log("Component mounted.");
+        try {
+            axios
+          .get("/home")
+          .then(res => {
+            console.log(res);
+        })
+        } catch (error) {
+console.log(error)
+}
+
+
+    },
+    methods: {
+      getPosts() {
+        axios
+          .get("web/setting")
+          .then(res => {
+            console.log(res);
+          })}
+        }}
+        </script>
