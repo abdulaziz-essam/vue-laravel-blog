@@ -6,7 +6,7 @@
                     <div class="card-header">Example Component</div>
 
                     <div class="card-body">
-                        I'm an example component.eggggggggggggggggg
+          this home component
                     </div>
                 </div>
             </div>
@@ -16,8 +16,19 @@
 
 <script>
     export default {
+        data(){
+
+        },
         mounted() {
             console.log('Component mounted.')
+        },
+        methods:{
+            getPosts(){
+               axios.get('api/setting')
+               .then(res=>{
+                console.log(res)
+               })
+            }
         }
     }
 </script>
