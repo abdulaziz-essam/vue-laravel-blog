@@ -8,6 +8,16 @@
             <div class="card-body">
               This home component
               <h1>{{ name }}</h1>
+              <div>
+    <h1>Hello, world!</h1>
+    <router-link to="/setting">Go to About page</router-link>
+  </div>
+  <div v-if="loading">Loading...</div>
+    <div v-else>
+  <div v-for="setting in settings" :key="setting.id">
+        <h2>{{ setting.contact_email  }}</h2>
+    
+    </div>  </div>
             </div>
           </div>
         </div>
@@ -21,25 +31,24 @@
 
     data() {
       return {
+        loading: true,
         name: "yasser"
-      };
+,settings:[]      };
     },
-    mounted() {
 
-
-        console.log("Component mounted.");
-        try {
-            axios
-          .get("/home")
-          .then(res => {
-            console.log(res);
+        mounted() {
+      axios.get('/settings')
+        .then(response => {
+          this.settings = response.data;
+          this.loading = false;
         })
-        } catch (error) {
-console.log(error)
-}
-
-
+        .catch(error => {
+          console.error(error);
+          this.loading = false;
+        });
     },
+
+
     methods: {
       getPosts() {
         axios

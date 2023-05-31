@@ -3,7 +3,8 @@ import homeComponent from '../components/HomeComponent.vue'
 import Setting from '../components/Setting.vue'
 
 const routes = [
-  { path: '/home', component: Setting },
+  { path: '/', redirect: '/home' },
+  { path: '/home', component: homeComponent },
   { path: '/setting', component: Setting },
 ];
 

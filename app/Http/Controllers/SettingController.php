@@ -1,28 +1,12 @@
 <?php
-
-namespace App\Http\Controllers;
-
+    namespace App\Http\Controllers;
+    use App\Models\Setting;
 use Illuminate\Http\Request;
-
-class SettingController extends Controller
-{
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    class SettingController extends Controller
     {
-        // $this->middleware('auth');
+        public function getData(Request $request)
+        {
+            $settings = Setting::all();
+            return response()->json($settings);
+        }
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return "jklkhklkl";
-    }
-}
