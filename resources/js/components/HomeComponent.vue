@@ -16,7 +16,7 @@
     <div v-else>
   <div v-for="setting in settings" :key="setting.id">
         <h2>{{ setting.contact_email  }}</h2>
-    
+        <p>{{ setting.value }}</p>
     </div>  </div>
             </div>
           </div>
