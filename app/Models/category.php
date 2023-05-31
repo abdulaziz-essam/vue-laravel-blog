@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
-
+namespace App\Models;
 use App\Post;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
@@ -12,4 +12,5 @@ class Category extends Model
     public function posts(){
         return $this->hasMany(Post::class);
     }
+    use HasFactory;
 }

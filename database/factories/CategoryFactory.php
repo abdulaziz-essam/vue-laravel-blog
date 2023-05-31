@@ -1,9 +1,11 @@
 <?php
 
+
 namespace Database\Factories;
 
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\category>
  */
@@ -17,7 +19,8 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name'=>'html tutorials',
+            'slug'=>'html-tutorials',
         ];
     }
 }

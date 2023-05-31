@@ -1,20 +1,15 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import SettingComponent from '../components/setting.vue'
-import HomeComponent from '../components/HomeComponent.vue'
-  const routes = [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeComponent
-    },
-    {
-      path: '/setting',
-      name: 'setting',
-      component: SettingComponent
-    }
-  ];
-  const router = createRouter({
-    history: createWebHistory(),
-    routes,
-  });
+import { createRouter, createWebHistory } from 'vue-router'
+import homeComponent from '../components/HomeComponent.vue'
+import Setting from '../components/Setting.vue'
+
+const routes = [
+  { path: '/home', component: Setting },
+  { path: '/setting', component: Setting },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+});
+
 export default router;

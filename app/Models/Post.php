@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\User;
 use App\Comment;
 use App\Category;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Post extends Model
 {
     //
@@ -27,4 +27,5 @@ class Post extends Model
         }
         return $comments;
     }
+    use HasFactory;
 }
