@@ -1,6 +1,10 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
+
+use App\Models\Comment;
 
 class CommentSeeder extends Seeder
 {
@@ -11,21 +15,7 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-        //
-        \App\Comment::create([
-            'body'=>'some comment here from a simple user',
-            'user_id'=>1,
-            'post_id'=>1,
-        ]);
-        \App\Comment::create([
-            'body'=>'some comment here from a simple user',
-            'user_id'=>1,
-            'post_id'=>2,
-        ]);
-        \App\Comment::create([
-            'body'=>'some comment here from a simple user',
-            'user_id'=>1,
-            'post_id'=>3,
-        ]);
+        Comment::factory()->count(10)->create();
+      
     }
 }

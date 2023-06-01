@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SettingController;
 /*
@@ -23,7 +24,10 @@ Auth::routes();
 // Route::get('/settings', [SettingController::class, 'index']);
 // Route::get('settings','SettingController@index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/settings', [SettingController::class, 'getData'])->name('settings.getData');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/setting', [SettingController::class, 'getData'])->name('settings.getData');
+Route::get('/post', [PostController::class, 'index'])->name('post.index');
+// Route::get('post', 'PostController@index');
 // Route::get('/settings', function () {
 //     return view('setting');
 // });

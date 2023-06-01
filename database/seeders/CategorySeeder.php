@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Category;
-use Database\Factories\CategoryFactory;
+
 
 class CategorySeeder extends Seeder
 {
