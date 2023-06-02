@@ -12,14 +12,11 @@ class PostController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */    public function index()
-    {
-        $posts = Post::all();
-           
-     
-        return response()->json($posts);
-    }
-
+     */  public function index()
+{
+    $posts = Post::get();
+    return response()->json($posts);
+}
     /**
      * Show the form for creating a new resource.
      *
