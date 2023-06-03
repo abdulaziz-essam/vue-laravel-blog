@@ -9,7 +9,7 @@
             <h1>{{ name }}</h1>
             <div>
               <h1>Hello, world!</h1>
-              <router-link to="/login">Go to About page</router-link>
+              <router-link to="/register">Go to About page</router-link>
             </div>
             <div v-if="loading">Loading...</div>
             <div v-else>
