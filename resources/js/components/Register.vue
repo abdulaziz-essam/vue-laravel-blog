@@ -1,19 +1,17 @@
 <template>
-    <div class="container">
-      <form method="get">
-        <label> name</label><input type="text" v-model="name">
-        <div v-show="nameError" class="text-danger">
-          ... firstname is too short
-        </div>
-       
-        <label>email</label><input type="email" v-model="email">
-        <label>password</label><input type="password" v-model="password"> 
-                   <router-link to="/register">submit</router-link>
- 
-        
-      </form>
-    </div>
-  </template>
+  <div class="container">
+    <form method="post" @submit.prevent="sumitRegister">
+      @csrf
+      <label> name</label><input type="text" v-model="name">
+      <div v-show="nameError" class="text-danger">
+        ... firstname is too short
+      </div>
+      <label>email</label><input type="email" v-model="email">
+      <label>password</label><input type="password" v-model="password"> 
+      <button type="submit">submit</button>
+    </form>
+  </div>
+</template>
   
   <script>
   import { computed } from '@vue/reactivity';

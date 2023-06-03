@@ -1,14 +1,12 @@
 <template>
-    <div class="container">
- <form>
-    <label>name</label><input type="email">
-    <label>password</label><input type="password"> 
-   <button>  <router-link to="/register">Go to About page</router-link></button> 
-    
-</form>
-    </div>
-  </template>
-
+  <div class="container">
+    <form>
+      <label>email</label><input type="email" v-model="email">
+      <label>password</label><input type="password" v-model="password"> 
+      <button type="submit" @click.prevent="submitLogin">Log In</button>
+    </form>
+  </div>
+</template>
   
 <script>
 export default {

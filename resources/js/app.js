@@ -41,33 +41,35 @@ const store = Vuex.createStore({
     actions: {
         RegisterUser({ commit }, payload) {
             axios.post('/register', payload)
-                .then(res => {
-                    console.log(res)
-                    commit('setUserToken', res.data.token)
-                })
-                .catch(err => {
-                    console.log(err)
-                })
-        },
-        LoginUser({ commit }, payload) {
-            axios.post('/login', payload)
-                .then(res => {
-                    console.log(res)
-                    commit('setUserToken', res.data.token)
-                    axios.get('/api/user')
-                        .then(res => {
-                            //console.log(res.data)
-                            commit('setUser', res.data.user)
-                        })
-                })
-                .catch(err => {
-                    console.log(err)
-                })
+              .then(res => {
+                console.log(res)
+                commit('setUserToken', res.data.token)
+              })
+              .catch(err => {
+                console.log(err)
+              })
+          },
+          LoginUser({ commit }, payload) {
+            axios.post('/login', { email: payload.email, password: payload.password })
+              .then(res => {
+                console.log(res)
+                commit('setUserToken', res.data.token)
+                axios.get('/user')
+                  .then(res => {
+                    //console.log(res.data)
+                    commit('setUser', res.data.user)
+                  })
+              })
+              .catch(err => {
+                console.log(err)
+              })
+          },
 
         }
 
-    }
-});
+    
+
+})
 
 app.use(router);
 app.use(store);

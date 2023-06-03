@@ -61,8 +61,9 @@ Route::middleware(['auth:api'])->group(function () {
 use App\Http\Controllers\UserController;
 // Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::post('/register', [UserController::class, 'register'])->name('register.register');
-Route::get('/login', [UserController::class, 'login']);
-
+Route::post('/login', [UserController::class, 'login']);
+Route::get('/user', [UserController::class, 'details']);
+// Route::get('user', 'UserController@details');
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/logout', [UserController::class, 'logout']);
 });

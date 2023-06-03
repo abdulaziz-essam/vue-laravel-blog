@@ -8,6 +8,7 @@ const routes = [
   { path: '/home', component: homeComponent },
   { path: '/setting', component: Setting },
   { path: '/register', component: Register },
+  { path: '/login', component: Login },
 ];
 
 const router = createRouter({
